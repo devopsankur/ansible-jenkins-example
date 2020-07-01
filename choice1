@@ -12,11 +12,15 @@ pipeline{
       agent any
             stages {
                 stage ('SCM checkout'){
-                                   deleteDir()
                                    steps {
                                         git branch:'${Environment}',
                                         url:'https://github.com/devopsankur/ansible-jenkins-example.git'
                                          }
                                       }
                     }
+            post { 
+                    always { 
+                        cleanWs()
+                    }
+            }
         }
