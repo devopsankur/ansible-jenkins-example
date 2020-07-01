@@ -11,6 +11,7 @@ return["select env"]
 pipeline{
       agent any
             stages {
+                deleteDir()
                 stage ('SCM checkout'){
                                    steps {
                                         git branch:'${Environment}',
