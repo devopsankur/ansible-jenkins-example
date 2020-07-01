@@ -11,8 +11,8 @@ return["select env"]
 pipeline{
       agent any
             stages {
-                deleteDir()
                 stage ('SCM checkout'){
+                                   deleteDir()
                                    steps {
                                         git branch:'${Environment}',
                                         url:'https://github.com/devopsankur/ansible-jenkins-example.git'
