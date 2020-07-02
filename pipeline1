@@ -8,7 +8,7 @@ node {
         projenv = input( id: 'userInput', message: 'Select Environment', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'dev\nqa\nprod', description: '', name: 'Environment'] ])
         if(projenv.equals("dev")){
             devenv = input( id: 'userInput', message: 'Select Dev Environment', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'dev101\ndev102', description: 'Dev Environment', name: 'Dev Environment'] ])
-        }if(projenv.equals("qa")){
+        }else if(projenv.equals("qa")){
             qaenv = input( id: 'userInput', message: 'Select QA Environment', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'qa101\nqa102', description: 'QA Environment', name: 'Dev Environment'] ])
         }else{
             prodenv = input( id: 'userInput', message: 'Select Prod Environment', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'prod101\nprod102', description: 'Prod Environment', name: 'Prod Environment'] ])
