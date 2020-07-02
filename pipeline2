@@ -1,5 +1,11 @@
 #!/usr/bin/env groovy
 node{
+    stage('Git') {
+            steps {
+                step([$class: 'WsCleanup'])
+                checkout scm
+            }
+    }
     stage("Environment"){
         properties([
         parameters([
@@ -69,9 +75,4 @@ node{
       ])
 
     }
-    post { 
-                always { 
-                    cleanWs()
-                }
-            }
 }
