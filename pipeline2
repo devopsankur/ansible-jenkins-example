@@ -25,7 +25,7 @@ node{
                         classpath: [], 
                         sandbox: false, 
                         script: 
-                            'return["Dev","QA","Stage","Prod","Preprod"]'
+                            'return["Dev","QA","Stage","Prod","Preprod","k8s"]'
                     ]
                 ]
             ], 
@@ -63,6 +63,9 @@ node{
                                 }
                                 else if(Env.equals("Preprod")){
                                     return["prepod101","prepod102","prepod103"]
+                                }
+                                else if(Env.equals("K8s")){
+                                    return["k8s101","k8s102","k8s103"]
                                 }
                             '''
                     ]
