@@ -10,7 +10,7 @@ node{
                 choiceType: 'PT_SINGLE_SELECT', 
                 description: 'Select the Env Name from the Dropdown List', 
                 filterLength: 1, 
-                filterable: true, 
+                filterable: false, 
                 name: 'Env', 
                 randomName: 'choice-parameter-5631314439613978', 
                 script: [
@@ -64,8 +64,6 @@ node{
                                 else if(Env.equals("Preprod")){
                                     return["preprod001","preprod002","preprod003"]
                                 }
-                                
-                                
                             '''
                     ]
                 ]
