@@ -1,14 +1,17 @@
 #!/usr/bin/env groovy
 node {
-    def choice1
-    def choice2
+    def projenv
+    def qaenv
+    def prodenv
 
-    stage ('Select'){
-        choice1 = input( id: 'userInput', message: 'Select your choice', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'aa\nbb', description: '', name: ''] ])
-        if(choice1.equals("aa")){
-            choice2 = input( id: 'userInput', message: 'Select your choice', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'yy\nww', description: '', name: ''] ])
+    stage ('Environment'){
+        projenv = input( id: 'userInput', message: 'Select Environment', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'dev\nqa\nprod', description: '', name: 'Environment'] ])
+        if(projenv.equals("dev")){
+            devenv = input( id: 'userInput', message: 'Select Dev Environment', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'dev101\ndev102', description: 'Dev Environment', name: 'Dev Environment'] ])
+        }if(projenv.equals("qa")){
+            qaenv = input( id: 'userInput', message: 'Select QA Environment', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'qa101\nqa102', description: 'QA Environment', name: 'Dev Environment'] ])
         }else{
-            choice2 = input( id: 'userInput', message: 'Select your choice', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'gg\nkk', description: '', name: ''] ])
+            prodenv = input( id: 'userInput', message: 'Select Prod Environment', parameters: [ [$class: 'ChoiceParameterDefinition', choices: 'prod101\nprod102', description: 'Prod Environment', name: 'Prod Environment'] ])
         }
     }
 }
