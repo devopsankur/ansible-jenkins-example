@@ -62,7 +62,7 @@ node{
                                     return["praaa001","prbbb002","prccc003"]
                                 }
                                 else if(Env.equals("Preprod")){
-                                    return["praaa001","prbbb002","prccc003"]
+                                    return["preprod001","preprod002","preprod003"]
                                 }
                                 
                                 
