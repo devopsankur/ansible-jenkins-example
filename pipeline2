@@ -10,7 +10,7 @@ node{
                 choiceType: 'PT_SINGLE_SELECT', 
                 description: 'Select the Env Name from the Dropdown List', 
                 filterLength: 1, 
-                filterable: true, 
+                filterable: false, 
                 name: 'Env', 
                 randomName: 'choice-parameter-5631314439613978', 
                 script: [
@@ -25,7 +25,7 @@ node{
                         classpath: [], 
                         sandbox: false, 
                         script: 
-                            'return["Dev","QA","Stage","Prod","Preprod","K8s"]'
+                            'return["Dev","QA","Stage","Prod","Preprod"]'
                     ]
                 ]
             ], 
@@ -63,9 +63,6 @@ node{
                                 }
                                 else if(Env.equals("Preprod")){
                                     return["prepod101","prepod102","prepod103"]
-                                }
-                                else if(Env.equals("K8s")){
-                                    return["k8s101","k8s102","k8s103"]
                                 }
                             '''
                     ]
