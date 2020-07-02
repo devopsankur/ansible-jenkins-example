@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 node{
-    stage(){
+    stage("Environment"){
         properties([
         parameters([
             [$class: 'ChoiceParameter', 
@@ -63,6 +63,7 @@ node{
                 ]
             ]
         ])
+      ])
 
     }
 }
